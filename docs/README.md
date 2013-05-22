@@ -9,6 +9,7 @@
 - Gradle or Maven for build
 - Groundwork or Foundation or Bootstrap for UI framework
 - Spring and Java (Oracle 7 or OpenJDK 8) for app platform
+- mailgun.org or SendGrid or MailChimp for app email
 
 **Issues:**
 
