@@ -1,16 +1,16 @@
-Planned architecture:
+**Planned architecture:**
 
-- PAAS (CloudFoundry, OpenShift) vs IAAS (AWS, Linode)
-- DBAAS (mongolab vs mongohq)
-- CDN (MaxCDN)
-- External user login (Google+, Yahoo!, etc)
-- Build (Gradle vs Maven)
-- Deployment/continuous-delivery
--- Spindle Otto vs LiveRebel vs Git-push-to-PAAS
-- UI framework (Groundwork, Foundation, Bootstrap)
-- Spring
--- Java 7 vs OpenJDK 8
+- CloudFoundry or OpenShift for PAAS
+  - Could also consider using IAAS (AWS, Linode) and self-installed packages instead
+- MongoLab or MongoHQ for DBAAS
+- MaxCDN or other for CDN
+  - Probably not required, but good to plan ahead
+- Google+ and Yahoo for external user login
+- Gradle or Maven for build
+- Groundwork or Foundation or Bootstrap for UI framework
+- Spring and Java (Oracle 7 or OpenJDK 8) for app platform
 
-Issues:
+**Issues:**
 
-- where/how to store user images?
+- Where/How to store user images?
+- How to accomplish continuous delivery? Depends on PAAS?
