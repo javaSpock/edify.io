@@ -15,3 +15,12 @@
 
 - Where/How to store user images?
 - How to accomplish continuous delivery? Depends on PAAS?
+
+**Ideas:**
+
+- schlogs = school logs
+- homepage has family section and community section
+- word of the day
+- subject refreshers for parents
+- community-contributed resources
+- point system in community
