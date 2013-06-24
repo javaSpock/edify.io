@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>edify.io | The ins and outs of homeschool education</title>
+    <link type="text/css" rel="stylesheet" href="../../resources/groundwork/css/groundwork.css" th:href="@{/resources/groundwork/css/groundwork.css}"/>
+    <!--[if IE]><link type="text/css" rel="stylesheet" href="../../resources/groundwork/css/groundwork-ie.css" th:href="@{/resources/groundwork/css/groundwork-ie.css}"/><![endif]-->
+    <!--[if lt IE 9]><script type="text/javascript" src="../../resources/groundwork/js/libs/html5shiv.min.js" th:href="@{/resources/groundwork/js/libs/html5shiv.min.js}"></script><![endif]-->
+    <!--[if IE 7]><link type="text/css" rel="stylesheet" href="../../resources/groundwork/css/font-awesome-ie7.min.css" th:href="@{/resources/groundwork/css/font-awesome-ie7.min.css}"/><![endif]-->
+    <style>
+        .row .adj {
+            width: 228px;
+            float: left;
+        }
+        .trans {
+            -webkit-perspective: 800px;
+            -webkit-perspective-origin: 50% 100px;
+            -moz-perspective: 800px;
+            -moz-perspective-origin: 50% 100px;
+            -o-perspective: 800px;
+            -o-perspective-origin: 50% 100px;
+            perspective: 800px;
+            perspective-origin: 50% 100px;
+            /*margin: 50px auto;*/
+            /*width: 400px;*/
+            margin-left: 100px;
+            float: left;
+        }
+        .trans .zcube, .trans .ycube {
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -o-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+        -webkit-transition:all 1.0s ease-in-out;
+        -moz-transition:all 1.0s ease-in-out;
+        -o-transition:all 1.0s ease-in-out;
+        transition:all 1.0s ease-in-out;
+        }
+        .trans .xcube {
+            position: relative;
+            margin: 0 auto;
+            height: 200px;
+            width: 200px;
+            -webkit-transform-style: preserve-3d;
+            -webkit-transform-origin: 50% 100px 0;
+            -moz-transform-style: preserve-3d;
+            -moz-transform-origin: 50% 100px 0;
+            -o-transform-style: preserve-3d;
+            -o-transform-origin: 50% 100px 0;
+            transform-style: preserve-3d;
+            transform-origin: 50% 100px 0;
+
+        -webkit-transition:all 1.0s ease-in-out;
+        -moz-transition:all 1.0s ease-in-out;
+        -o-transition:all 1.0s ease-in-out;
+        transition:all 1.0s ease-in-out;
+        }
+        .trans .face {
+            position: absolute;
+            height: 200px;
+            width: 200px;
+            /*padding: 20px;*/
+            -webkit-backface-visibility: visible;
+            -moz-backface-visibility: visible;
+            -o-backface-visibility: visible;
+            backface-visibility: visible;
+            /*border: 1px #000 solid;*/
+        }
+        .trans .face p {
+            font-size: 200px;
+            line-height: 1;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            color: rgba(0,0,0,0.75);
+        }
+        .xcube .one {
+            -webkit-transform: rotateX(90deg) translateZ(100px);
+            -moz-transform: rotateX(90deg) translateZ(100px);
+            -o-transform: rotateX(90deg) translateZ(100px);
+            transform: rotateX(90deg) translateZ(100px);
+            background-color: rgba(255, 0, 0, 0.5);
+        }
+        .xcube .two {
+            -webkit-transform: translateZ(100px);
+            -moz-transform: translateZ(100px);
+            -o-transform: translateZ(100px);
+            transform: translateZ(100px);
+            /*background-color: rgba(0, 255, 0, 0.5);*/
+        }
+        .xcube .three {
+            -webkit-transform: rotateY(90deg) translateZ(100px);
+            -moz-transform: rotateY(90deg) translateZ(100px);
+            -o-transform: rotateY(90deg) translateZ(100px);
+            transform: rotateY(90deg) translateZ(100px);
+            background-color: rgba(0, 255, 255, 0.5);
+        }
+        .xcube .four {
+            -webkit-transform: rotateY(180deg) translateZ(100px);
+            -moz-transform: rotateY(180deg) translateZ(100px);
+            -o-transform: rotateY(180deg) translateZ(100px);
+            transform: rotateY(180deg) translateZ(100px);
+        }
+        .xcube .five {
+            -webkit-transform: rotateY(-90deg) translateZ(100px);
+            -moz-transform: rotateY(-90deg) translateZ(100px);
+            -o-transform: rotateY(-90deg) translateZ(100px);
+            transform: rotateY(-90deg) translateZ(100px);
+        }
+        .xcube .six {
+            -webkit-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+            -moz-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+            -o-transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+            transform: rotateX(-90deg) translateZ(100px) rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="responsive">edify.io</h1>
+<div class="row">
+    <div class="one eighth"><h1>e</h1></div>
+    <div class="one eighth"><h1>d</h1></div>
+    <div class="one eighth"><h1>i</h1></div>
+    <div class="one eighth"><h1>f</h1></div>
+    <div class="one eighth"><h1>y</h1></div>
+    <div class="three eighths"><h1>.io</h1></div>
+</div>
+
+<div class="row" style="height: 228px;">
+    <div class="adj">
+        <div class="trans">
+            <div class="zcube">
+                <div class="ycube">
+                    <div id="xcube1" class="xcube">
+                        <div class="face one"><p>1</p></div>
+                        <div class="face two"><p>2</p></div>
+                        <div class="face three"><p>3</p></div>
+                        <div class="face four"><p>4</p></div>
+                        <div class="face five"><p>5</p></div>
+                        <div class="face six"><p>6</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="adj">
+        <div class="trans">
+            <div class="zcube">
+                <div id="ycube2" class="ycube">
+                    <div class="xcube">
+                        <div class="face one"><p>1</p></div>
+                        <div class="face two"><p>2</p></div>
+                        <div class="face three"><p>3</p></div>
+                        <div class="face four"><p>4</p></div>
+                        <div class="face five"><p>5</p></div>
+                        <div class="face six"><p>6</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <button id="b1" class="large button" style="margin-left: 100px">One</button>
+    <button id="b2" class="large button">Two</button>
+</div>
+
+<script type="text/javascript" src="../../resources/groundwork/js/libs/jquery-1.9.1.min.js" th:href="@{/resources/groundwork/js/libs/jquery-1.9.1.min.js}"></script>
+<!--<script type="text/javascript" src="../../resources/groundwork/js/plugins/jquery.cycle2.js" th:href="@{/resources/groundwork/js/plugins/jquery.cycle2.js}"></script>-->
+<script type="text/javascript" src="../../resources/groundwork/js/plugins/jquery.magnific-popup.js" th:href="@{/resources/groundwork/js/plugins/jquery.magnific-popup.js}"></script>
+<script type="text/javascript" src="../../resources/groundwork/js/groundwork.all.js" th:href="@{/resources/groundwork/js/groundwork.all.js}"></script>
+<script>
+var x1 = 90;
+var y2 = 90;
+$(document).ready(function() {
+    $("#b1").click(function(e) {
+        //var c = $("#xcube1");
+        //c.css("-webkit-transform", "rotateX(90deg)");
+        //$("#xcube1").css("transform","rotateX("+($(this).index() * -90)+"deg)");
+        $("#xcube1").css("transform","rotateX("+x1+"deg)");
+        x1 += 90;
+    });
+    $("#b2").click(function(e) {
+        $("#ycube2").css("transform","rotateY("+y2+"deg)");
+        y2 += 90;
+    });
+});
+</script>
+</body>
+</html>

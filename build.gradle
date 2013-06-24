@@ -1,0 +1,82 @@
+//buildscript {
+//	repositories { mavenCentral() }
+//	dependencies {}
+//}
+
+configure(allprojects) { project ->
+	group = "io.edify"
+	version = "0.1-SNAPSHOT"
+	
+	ext.dependencyVersions = [:]
+	ext.dependencyVersions.spring = "3.2.3.RELEASE"
+	ext.dependencyVersions.springSecurity = "3.1.4.RELEASE"
+	ext.dependencyVersions.jodaTime = "2.2"
+	ext.dependencyVersions.jackson = "2.2.2"
+	ext.dependencyVersions.thymeleaf = "2.0.16"
+	
+	ext.jbossHome = System.getenv()["JBOSS_HOME"]
+	ext.jbossModules = jbossHome+"/modules"
+	
+	apply plugin: "java"
+	apply plugin: "idea"
+	
+	archivesBaseName = "edifyio-$project.name"
+	sourceCompatibility = 1.7
+	targetCompatibility = 1.7
+	
+	repositories { mavenCentral() }
+	
+	tasks.withType(Compile).all { compile ->
+		compile.options.debug = true
+		compile.options.debugOptions = [debugLevel:"lines,source,vars"]
+		compile.options.fork([memoryMaximumSize:"512m"])
+	}
+}
+
+project("core") {
+	description = "Common reusable packages"
+	
+	dependencies {
+		compile "com.fasterxml.jackson.core:jackson-databind:$dependencyVersions.jackson"
+		compile "joda-time:joda-time:$dependencyVersions.jodaTime"
+        compile "org.springframework:spring-context:$dependencyVersions.spring"
+        compile "org.slf4j:slf4j-api:1.6.1" //-- should be same version used by thymeleaf
+	}
+}
+
+project("ROOT") {
+	description = "The edify.io web app"
+	
+	apply plugin: "war"
+	
+	archivesBaseName = project.name
+	
+	dependencies {
+        providedCompile fileTree(dir: jbossModules, includes: ["javax/servlet/api/**/*.jar"])
+
+		compile project(":core")
+		compile "org.thymeleaf:thymeleaf-spring3:$dependencyVersions.thymeleaf"
+		compile "org.springframework:spring-webmvc:$dependencyVersions.spring"
+	}
+
+    ext.jbossDeployments = "${jbossHome}/standalone/deployments"
+
+    task unload(type: Delete) {
+        def dd = new File(jbossDeployments)
+        if(dd.exists() && dd.isDirectory()) {
+            def files = dd.listFiles()
+            files.each { file ->
+                if(file.name.startsWith("ROOT")) delete file
+            }
+        }
+    }
+
+    task load(type: Copy) {
+        dependsOn unload, war
+        from war.archivePath
+        into jbossDeployments
+        rename { old ->
+            return old - "-$project.version"
+        }
+    }
+}

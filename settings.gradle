@@ -1,0 +1,4 @@
+rootProject.name = "edify.io"
+
+include "core"
+include "ROOT"
