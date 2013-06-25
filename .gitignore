@@ -1,4 +1,5 @@
 .gradle/
+.idea/
 edify.io.iml
 edify.io.ipr
 edify.io.iws
