@@ -1,8 +1,11 @@
+# Developer Notes
+
 **Planned architecture:**
 
 - CloudFoundry or OpenShift for PAAS
   - Could also consider using IAAS (AWS, Linode) and self-installed packages instead
-- MongoLab or MongoHQ for DBAAS
+  - Docker on AWS would be cool, though I think a PaaS would be more ideal
+- ~~MongoLab or MongoHQ~~ Amazon RDS for DBAAS
 - MaxCDN or other for CDN
   - Probably not required, but good to plan ahead
 - Google+ and Yahoo for external user login
@@ -30,3 +33,57 @@
 - capture user activity to learn how each person uses the app
   - make suggestions to improve UX
 - simple tutorial for first-time users
+
+# Personal
+
+### Fri 5/23
+
+Atlanta > Austin
+
+- Late evening flight, Delta non-stop
+- The Driskill ? thru booking.com
+
+### Sat 5/24
+
+Austin, TX
+
+### Sun 5/25
+
+Austin > Phoenix
+
+- Find flight
+- Rent car
+- Drive to Flagstaff
+
+### Mon 5/26
+
+Flagstaff, AZ
+
+- Visit GC
+
+### Tue 5/27
+
+Flagstaff > San Diego
+
+- ~7.5 hr drive
+
+### Wed 5/28
+
+San Diego, CA
+
+### Thu 5/29
+
+San Diego > LA ?
+
+- ~2.5 hr drive
+- Visit SpaceX ?
+
+### Fri 5/30
+
+LA > San Fran ?
+
+- ~6 hr drive
+
+### Sat 5/31
+
+San Fran > Atlanta
